@@ -7,6 +7,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    outputs:
+      asdf: ${{ steps.ffff.outputs.asdf }}
     steps:
-      - run:
+      - id: ffff
+        run:
           echo "asdf=$asdf" >> $GITHUB_OUTPUT
