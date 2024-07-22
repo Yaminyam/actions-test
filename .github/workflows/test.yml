@@ -10,6 +10,7 @@ jobs:
     outputs:
       asdf: ${{ steps.ffff.outputs.asdf }}
     steps:
-      - id: ffff
+      - if: true
+        id: ffff
         run:
           echo "asdf=$asdf" >> $GITHUB_OUTPUT
