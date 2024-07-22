@@ -7,10 +7,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      is_prelease: true
     outputs:
       asdf: ${{ steps.ffff.outputs.asdf }}
     steps:
-      - if: true
+      - if: ${{ !env.is_prelease }}
         id: ffff
         run:
           echo "asdf=$asdf" >> $GITHUB_OUTPUT
