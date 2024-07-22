@@ -12,8 +12,7 @@ jobs:
     outputs:
       asdf: ${{ steps.ffff.outputs.asdf }}
     steps:
-      - if: ${{ !env.is_prelease && env.is_prelease == true }}
-        id: ffff
+      - id: ffff
         run:
           asdf=true
           echo "asdf=$asdf" >> $GITHUB_OUTPUT
