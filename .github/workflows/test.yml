@@ -16,6 +16,6 @@ jobs:
         run:
           asdf=true
           echo "asdf=$asdf" >> $GITHUB_OUTPUT
-      - if: ${{ !env.is_prelease == false }}
+      - if: ${{ !!env.is_prelease == true }}
         run:
           echo "test"
