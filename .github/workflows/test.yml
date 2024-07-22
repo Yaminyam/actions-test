@@ -15,4 +15,8 @@ jobs:
       - if: ${{ !env.is_prelease && env.is_prelease == true }}
         id: ffff
         run:
+          asdf=true
           echo "asdf=$asdf" >> $GITHUB_OUTPUT
+      - if: ${{ steps.ffff.outputs.asdf == true }}
+        run:
+          echo "test"
