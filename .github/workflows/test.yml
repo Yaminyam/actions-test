@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      is_prelease: true
+      is_prelease: false
     outputs:
       asdf: ${{ steps.ffff.outputs.asdf }}
     steps:
