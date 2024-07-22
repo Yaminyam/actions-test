@@ -16,6 +16,6 @@ jobs:
         run:
           asdf=true
           echo "asdf=$asdf" >> $GITHUB_OUTPUT
-      - if: ${{ contains('Hello world', 'llo') }}
+      - if: ${{ contains('Hello world', 'asd') }}
         run:
           echo "test"
