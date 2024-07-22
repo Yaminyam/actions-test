@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      is_prelease: false
+      is_prelease: true
     outputs:
       asdf: ${{ steps.ffff.outputs.asdf }}
     steps:
@@ -16,6 +16,6 @@ jobs:
         run:
           asdf=true
           echo "asdf=$asdf" >> $GITHUB_OUTPUT
-      - if: ${{ !!env.is_prelease == false }}
+      - if: ${{ env.is_prelease }}
         run:
           echo "test"
