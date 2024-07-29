@@ -1,21 +1,18 @@
 name: backport
 
 on:
-  workflow_dispatch
+  push:
+  workflow_dispatch:
 
 jobs:
+  
   test:
+    if: (github.event_name == 'push' && contains(github.ref, 'refs/tags/'))
     runs-on: ubuntu-latest
-
-    env:
-      is_prelease: false
-    outputs:
-      asdf: ${{ steps.ffff.outputs.asdf }}
     steps:
       - id: ffff
         run:
           asdf=true
           echo "asdf=$asdf" >> $GITHUB_OUTPUT
-      - if: ${{ contains('Hello world', 'asd') == 'false' }}
-        run:
+      - run:
           echo "test"
